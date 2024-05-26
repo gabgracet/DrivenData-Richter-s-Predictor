@@ -163,24 +163,3 @@ evaluation #F1-score test result di sini
 #predict using test_values data
 y_pred_1 = predict(xgb, data.matrix(test_values[,-1]))
 y_pred_1 = factor(y_pred_1)
-
-#VARIABEL EVALUATION -----------------------------------------------------------
-
-#(tidak jadi digunakan karena R nya error setiap run :c)
-#evaluation using SHAP 
-#shap_values = shap.values(xgb_model = xgb, 
-#                          X_train = data.matrix(train_values[,-1]))
-#shap_values$mean_shap_score
-#shap_values_iris = shap_values$shap_score
-
-#shap.plot.summary(shap_long_iris, x_bound  = 1.5, dilute = 10)
-
-#SUBMISSION --------------------------------------------------------------------
-#gabungin kolom
-#submit = cbind(test_values[,1],y_pred_1)
-
-#rename coloumn supaya sesuai submission format
-#colnames(submit) = c("building_id","damage_grade")
-
-#save data and convert jadi file
-#write.csv(submit, "C:/Users/User/Documents/UPH/Applied Math/Sem 8 (Genap)/Capstone/Richter's Predictor/submission_xgboost2.csv", row.names=FALSE)
